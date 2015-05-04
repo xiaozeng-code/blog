@@ -95,7 +95,21 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False 
+
+
+#config Photologue
+
+#TEMPLATE_LOADERS = (
+#    'django.template.loaders.filesystem.Loader',
+#    'django.template.loaders.app_directories.Loader',
+#)
+
+#from photologue import PHOTOLOGUE_APP_DIR
+#TEMPLATE_DIRS = (
+#    '/root/djspace/blogsite/blog/templates',
+#)
+
 
 
 # Static files (CSS, JavaScript, Images)
