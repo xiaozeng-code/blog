@@ -12,6 +12,26 @@ def home(request):
     context['blog']=Article.objects.order_by("-id")
     return render(request,'index.html',context)
 
+
+
+#show blog detail
+def blog_detail(request,record):
+     """page detail"""
+     context={}
+     context['blog']=get_object_or_404(Article,pk=int(record))
+     return render(request,'detail.html',context)
+
+
+#显示边侧栏的最新文章和点击排行文章
+def sideinfo(request):
+    context={}
+    context['blog_latest']=Articles.objects.order_by("createtime")[:5]
+    context['blog_click']=Articles.objects.order_by('public')[:5]
+    return render(request,'common/sidebar.html',context)
+
+
+
+
 def talkfree(request):
     """详谈生活"""
     context={}
